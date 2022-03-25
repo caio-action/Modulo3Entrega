@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CaioCavalcante_atividadePratica.Models.Destino>
+
+@{
+    ViewData["Title"] = "Destinos";
+}
+
+<section class="container-fluid mb-2">
+
+    <h1 class="font-config">Cadastro de Destinos</h1>
+
+    <p>
+        <a class="btn btn-cadastro" role="button" asp-action="Create">Adicionar novo destino</a>
+    </p>
+</section>
+
+<div class="tabela-cadastro mt-4 mb-4 table-responsive">
+
+    <table class="table table-sm table-borderless table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Destino
+                </th>
+                <th>
+                    Preço da passagem
+                </th>
+                <th>
+                    Data de embarque
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeDestino)
+                </td>
+                <td>
+                    R$@Html.DisplayFor(modelItem => item.Preco)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataViagem)
+                </td>
+                <td>
+                    <a class="btn btn-cadastro" role="button" asp-action="Edit" asp-route-id="@item.IdDestino">Editar</a>
+                    <a class="btn btn-cadastro" role="button" asp-action="Details" asp-route-id="@item.IdDestino">Detalhes</a>
+                    <a class="btn btn-cadastro" role="button" asp-action="Delete" asp-route-id="@item.IdDestino">Apagar</a>
+                </td>
+            
+            </tr>
+            }
+        </tbody>
+    </table>
+
+</div>

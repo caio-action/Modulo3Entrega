@@ -1,0 +1,41 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Destino
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+
+<section class="font-config container-fluid mb-2">
+
+    <h1>Detalhes</h1>
+    <hr />
+
+</section>
+<div class="container mb-4">
+    <h4>Destino</h4>
+
+    <dl class="row">
+        <dt class="col-sm-5">
+            Nome do destino:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.NomeDestino)
+        </dd>
+        <dt class="col-sm-5">
+            Preço da passagem:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class="col-sm-5">
+            Data de embarque:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.DataViagem)
+        </dd>
+    </dl>
+    <div>
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Edit" asp-route-id="@Model.IdDestino">Editar</a>
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+    </div>
+</div>
+

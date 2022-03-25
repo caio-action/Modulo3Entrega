@@ -1,0 +1,61 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes";
+}
+<section class="font-config container-fluid mb-2">
+
+    <h1>Detalhes</h1>
+    <hr />
+
+</section>
+
+<div class="container mb-4">
+    <h4>Cliente</h4>
+
+    <dl class="row">
+        <dt class="col-sm-5">
+            Nome do cliente:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.NomeCliente)
+        </dd>
+        <dt class="col-sm-5">
+            CPF:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt class="col-sm-5">
+            Nº do cartão de crédito:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.CartaoDeCredito)
+        </dd>
+        <dt class="col-sm-5">
+            Telefone:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class="col-sm-5">
+            E-mail:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class="col-sm-5">
+            Destino:
+        </dt>
+        <dd class="col-sm-7">
+            @Html.DisplayFor(model => model.Destino.NomeDestino)
+        </dd>
+    </dl>
+
+    <div>
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Edit" asp-route-id="@Model.IdCliente">Editar</a>
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+    </div>
+
+</div>
+

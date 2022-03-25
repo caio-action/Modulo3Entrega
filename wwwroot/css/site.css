@@ -1,0 +1,122 @@
+﻿body {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    background-color: #f2f0d8;
+}
+
+.font-config {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.btn-cadastro {
+    text-decoration: none;
+    background: rebeccapurple;
+    color: #f2f0d8;
+    font-weight: normal;
+    border-radius: 10px;
+    margin: 3px;   
+}
+
+.btn-cadastro:hover {
+    color: #F2EB85;
+    background: rebeccapurple;
+}
+
+.btn-cadastro-delete {
+    text-decoration: none;
+    color: #f2f0d8;
+    font-weight: normal;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.btn-cadastro-delete:hover {
+    color: #F2EB85;
+}
+
+.navbar {
+    background-color: rebeccapurple;
+}
+
+.logo{
+    font-size: 30px;
+}
+
+.nav-link {
+    color: #f2f0d8;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.nav-link:hover {
+    color: #F2EB85;
+    background-color: rebeccapurple;
+}
+
+.carousel {
+    height: 60vh;
+    box-shadow: 0px 0px 8px 2px #000000;
+}
+
+.carousel img{
+    height: 60vh;
+}
+
+.info-cards {
+    background-color: #f2eb85e2;
+    box-shadow: 0px 0px 8px 2px #000000;
+    border-radius: 10px;
+}
+
+#mapa-brasil{
+    width:80px;
+}
+
+#bob {
+    width: 160px;
+}
+
+.tabela-cadastro {
+    /*display: flex;
+    justify-content: center;*/
+    background-color: rebeccapurple;
+    box-shadow: 0px 0px 8px 2px black;
+    width:100%;
+}
+
+.tabela-cadastro th {
+    text-align: center;
+    height: 70px;
+    color: #F2EB85;
+}
+
+.tabela-cadastro td {
+    text-align: center;
+    color: #f2f0d8;
+}
+
+.tabela-cadastro a {
+    width: 30%;
+}
+
+
+
+.cartoes {
+    width: 50%;
+}
+
+@media (max-width: 1180px){
+    .tabela-cadastro a {
+        display:block;
+        width: 90%;
+    }
+
+}
+
+@media (max-width: 576px) {
+    .tabela-cadastro a {
+        font-size:12px;
+    }
+}
+

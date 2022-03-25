@@ -1,0 +1,45 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Destino
+
+@{
+    ViewData["Title"] = "Adicionar destino";
+}
+<section class="container-fluid mb-2 font-config">
+    <h1>Adicionar destino</h1>
+
+    <h4>Destino</h4>
+</section>
+<hr />
+<div class="row justify-content-center mb-4">
+    <div class="col-md-4">
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="NomeDestino" class="control-label">Nome do destino:</label>
+                    <input asp-for="NomeDestino" class="form-control" />
+                    <span asp-validation-for="NomeDestino" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Preco" class="control-label">Preço da passagem:</label>
+                    <input asp-for="Preco" class="form-control" />
+                    <span asp-validation-for="Preco" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="DataViagem" class="control-label">Data de embarque:</label>
+                    <input asp-for="DataViagem" class="form-control" />
+                    <span asp-validation-for="DataViagem" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Adicionar ao cadastro" class="btn-cadastro btn btn-block" />
+                </div>
+            </form>
+            <div>
+                <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+            </div>
+    </div>
+</div>
+
+
+
+    @section Scripts {
+        @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    }

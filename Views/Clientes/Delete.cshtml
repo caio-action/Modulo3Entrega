@@ -1,0 +1,62 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Cliente
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<section class="font-config container-fluid mb-2">
+
+    <h1>Excluir contato</h1>
+
+    <h3>Você tem certeza que deseja apagar @Html.DisplayFor(modelItem => Model.NomeCliente) da lista?</h3>
+    <hr />
+</section>
+
+<div class="container mb-4">
+    <h4>Cliente</h4>
+    
+    <dl class="row">
+        <dt class = "col-sm-5">
+            Nome do cliente:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.NomeCliente)
+        </dd>
+        <dt class = "col-sm-5">
+            CPF:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.CPF)
+        </dd>
+        <dt class = "col-sm-5">
+            Nº do cartão de crédito:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.CartaoDeCredito)
+        </dd>
+        <dt class = "col-sm-5">
+            Telefone:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Telefone)
+        </dd>
+        <dt class = "col-sm-5">
+            E-mail:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-5">
+            Destino:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Destino.NomeDestino)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCliente" />
+        <input type="submit" value="Apagar" class="btn btn-danger btn-cadastro-delete btn-block" />
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+    </form>
+</div>

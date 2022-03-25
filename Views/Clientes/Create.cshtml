@@ -1,0 +1,61 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Cliente
+
+@{
+    ViewData["Title"] = "Adicionar cliente";
+}
+
+<section class="container-fluid mb-2 font-config">
+
+    <h1>Adicionar cliente</h1>
+
+    <h4>Cliente</h4>
+</section>
+<hr />
+<div class="row justify-content-center mb-4">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="NomeCliente" class="control-label">Nome do cliente:</label>
+                <input asp-for="NomeCliente" class="form-control" />
+                <span asp-validation-for="NomeCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CPF" class="control-label">CPF:</label>
+                <input asp-for="CPF" class="form-control" />
+                <span asp-validation-for="CPF" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CartaoDeCredito" class="control-label">Nº do cartão de crédito:</label>
+                <input asp-for="CartaoDeCredito" class="form-control" />
+                <span asp-validation-for="CartaoDeCredito" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label">Telefone:</label>
+                <input asp-for="Telefone" class="form-control" />
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label">E-mail:</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdDestino" class="control-label">Destino:</label>
+                <select asp-for="IdDestino" class="form-control" asp-items="ViewBag.IdDestino"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Adicionar ao cadastro" class="btn-cadastro btn btn-block" />
+            </div>
+        </form>
+        <div>
+            <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

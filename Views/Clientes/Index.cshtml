@@ -1,0 +1,76 @@
+﻿@model IEnumerable<CaioCavalcante_atividadePratica.Models.Cliente>
+
+@{
+    ViewData["Title"] = "Contatos";
+}
+
+<section class="container-fluid mb-2">
+
+    <h1 class="font-config">Cadastro de Clientes</h1>
+
+    <p>
+        <a class="btn btn-cadastro" role="button" asp-action="Create">Adicionar cliente</a>
+    </p>
+</section>
+
+<div class="tabela-cadastro mt-4 mb-4 table-responsive">
+
+    <table class="table table-sm table-borderless table-hover">
+        <thead>
+            <tr>
+                <th>
+                    Nome do cliente
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    Nº do cartão de crédito
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>
+                    E-mail
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Destino)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+             {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeCliente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CartaoDeCredito)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Destino.NomeDestino)
+                    </td>
+                    <td>
+                        <a  class="btn btn-cadastro" role="button" asp-action="Edit" asp-route-id="@item.IdCliente">Editar</a>
+                        <a  class="btn btn-cadastro" role="button" asp-action="Details" asp-route-id="@item.IdCliente">Detalhes</a>
+                        <a  class="btn btn-cadastro" role="button" asp-action="Delete" asp-route-id="@item.IdCliente">Apagar</a>
+                    </td>
+
+
+                </tr>
+             }
+        </tbody>
+    </table>
+
+</div>

@@ -1,0 +1,44 @@
+﻿@model CaioCavalcante_atividadePratica.Models.Destino
+
+@{
+    ViewData["Title"] = "Apagar";
+}
+
+<section class="font-config container-fluid mb-2">
+
+    <h1>Excluir destino</h1>
+
+    <h4>Você tem certeza que deseja apagar @Html.DisplayFor(modelItem => Model.NomeDestino) da lista?</h4>
+    <hr />
+</section>
+
+<div class="container mb-4">
+    <h4>Destino</h4>
+    
+    <dl class="row">
+        <dt class = "col-sm-5">
+            Nome do destino:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.NomeDestino)
+        </dd>
+        <dt class = "col-sm-5">
+            Preço da passagem:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.Preco)
+        </dd>
+        <dt class = "col-sm-5">
+            Data de embarque:
+        </dt>
+        <dd class = "col-sm-7">
+            @Html.DisplayFor(model => model.DataViagem)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdDestino" />
+        <input type="submit" value="Apagar" class="btn btn-danger btn-cadastro-delete btn-block" />
+        <a class="btn-cadastro btn btn-block" role="button" asp-action="Index">Voltar à lista</a>
+    </form>
+</div>
